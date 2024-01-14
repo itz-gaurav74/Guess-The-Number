@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Practice set</h2>
+    <p>
+      Write a program to print the marks of a students in an object using for
+      loop ?
+    </p>
+    <p>
+      Write a program to print the marks of a students in an object using for-in
+      loop ?
+    </p>
+    <p>Write a program to print 'try again' until the user enters the correct number ?</p>
+    <p>Write a function to find mean of 5 numbers ?</p>
+
+    <script>
+      let marks = {
+        dev: 94,
+        radha: 95,
+        monika: 90,
+        harry: 90,
+      };
+
+      // Practice 1 : Using For Loop
+      for (let i = 0; i < Object.keys(marks).length; i++) {
+        console.log(
+          `${i} - The marks of ${Object.keys(marks)[i]} is ${
+            Object.values(marks)[i]
+          }`
+        );
+      }
+
+
+      // Practice 2 : using For-In
+      for(let i in marks){
+        console.log(`The Marks Of ${i} Is ${marks[i]}`)
+      }
+
+      // Practice 3 : While Loop 
+    //   let num = Math.floor(Math.random() * 10);
+    //   let userInp;
+
+    //   while(num != userInp){
+    //     userInp = prompt('Guess A Number Between 1 - 10');
+    //     console.log(`User Inp : ${userInp}`)
+    //     console.log(`The Num Is : ${num}`)
+    //   } 
+
+    // Practice 4 : Function To Find Mean
+    
+
+    function mean(a,b,c,d,e){
+    return `The Mean Of Given Numbers Is : ${(a+b+c+d+e)/5}`
+    }
+    console.log(mean(4,5,6,7,8))
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OOP - Objects</title>
+  </head>
+  <body>
+    <ul>
+      <h3>Objects In Js:</h3>
+      <li>
+        Object is a collection of key value pair data, and seperated by quammas.
+      </li>
+      <li>
+        Objects are used to store keyes collection of data & complex entity.
+      </li>
+      <li>
+        In object we can store key:value pair of data, keyed:functions/methods.
+      </li>
+    </ul>
+    const student = {
+      name: "Sky Dev",
+      id: "Err412",
+      hackerData: function () {
+        console.log(`Hacker Id Is : ${this.id}`);
+      },
+    };
+
+    <script>
+      
+      // Prototypes:
+      const employee = {
+        calcTax() {
+          console.log("User Tax is : 10%");
+        },
+      };
+
+      const dev = {
+        salary: 5000,
+      };
+      const dev1 = {
+        salary: 4000,
+      };
+      const dev2 = {
+        salary: 6000,
+        calcTax() {
+          console.log("User Tax Is : 20%"); // If object & prototype have same method, then object's method will be used.
+        },
+      };
+      const dev3 = {
+        salary: 3000,
+      };
+
+      dev.__proto__ = employee;
+      dev1.__proto__ = employee;
+      dev2.__proto__ = employee;
+      dev3.__proto__ = employee;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callback Hell</title>
+  </head>
+  <body>
+    <h2>Callback Hell</h2>
+    <p>We Using Promises Insted Of Callback Hell...</p>
+
+    <!-- <script>
+      // Example 1 : Nested Callbacks Using SetTimeout()
+      function printData(item) {
+        alert(`This is a callback ${item}`);
+      }
+
+      function callbackFun(Callback) {
+        setTimeout(() => {
+          let item = 1;
+          Callback(item);
+          console.log(item)
+          item++;
+          setTimeout(() => {
+            Callback(item);
+            console.log(item)
+            item++;
+            setTimeout(() => {
+              Callback(item);
+              console.log(item)
+              item++;
+            },500);
+          },400);
+        },200);
+      }
+
+      callbackFun(printData);
+    </script> -->
+
+    <script>
+      // Example 2 : User Payment Done Or Not
+      var DidPayment = true;
+
+      function message() {
+        console.log("Payment Successful");
+      }
+
+      function UserPayment(DidPayment, callback) {
+        if (DidPayment) {
+          callback();
+        } else {
+          UserPayment();
+          if (DidPayment) {
+            callback();
+          } else {
+            UserPayment();
+            if (Didpayment) {
+              callback();
+            } else {
+              UserPayment();
+              //... And so on
+            }
+          }
+        }
+      }
+
+      // Making the call
+      UserPayment(DidPayment, message);
+    </script>
+  </body>
+</html>

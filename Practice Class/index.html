@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Class</title>
+</head>
+<body>
+    <script> 
+    let DATA = 'Confidential Data!';
+
+        class User{
+            constructor(name,email,id){
+                this.name = name;
+                this.email = email;
+                this.id = id;
+                console.log('user constructor')
+            }
+            viewData(){
+                console.log(`Website Secured Data : ${DATA}`)
+            }
+        }
+
+        class Admin extends User{
+            // constructor(name,email,id){
+            //     console.log('admin constructor')
+            //     super(name,email,id)
+
+            // }
+            editData(){
+                DATA = 'Website Data Edited by Admin!';
+            }
+        }
+
+        let harry = new User('Harry', 'harry@mail.com', "A44");
+        let ram = new User('Ram', 'ram@mail.com',"C33");
+
+        let hod = new Admin('HOD', 'hod@college.com',"W33");  
+
+    </script>
+
+
+
+</body>
+</html>

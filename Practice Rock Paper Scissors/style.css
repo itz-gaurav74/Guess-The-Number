@@ -1,0 +1,78 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #070606d6;
+  color: beige;
+}
+h2 {
+  height: 10vmin;
+  background-color: bisque;
+  color: black;
+  text-align: center;
+  padding: 3vmin 0;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.option {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5vmin 0;
+}
+.option img {
+  height: 110px;
+  width: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+/* .container:hover > :not(:hover) {
+    filter: blur(3px);
+} */
+.option:hover {
+  background-color: #d58fc6;
+}
+
+.winner-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4vmin;
+}
+.user-data,
+.comp-data {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  gap: 2vmin;
+  margin: 0 4vmin;
+}
+.reset-btn {
+  display: flex;
+  justify-content: center;
+  margin: 4vmin 0;
+}
+#reset {
+  padding: 1vmin;
+  font-size: 2vmin;
+  border-radius: 5px;
+  background: burlywood;
+  box-shadow: 2px 2px 0 0 burlywood;
+}
+#reset:hover {
+  box-shadow: none;
+}
+.winner-announce {
+  display: flex;
+  justify-content: center;
+  margin: 10vmin 0;
+  font-size: 4vmin;
+}

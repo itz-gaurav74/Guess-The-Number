@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OOP - Classes</title>
+  </head>
+  <body>
+    <h2>Classes in Js</h2>
+
+    <!-- <script>
+        class SoftCom {
+          name() {
+            console.log("Employee Name Access.");
+          }
+          id() {
+            console.log("Employee Id Access.");
+          }
+          compName(company) {
+            this.company = company;
+          }
+        }
+
+        let Dev = new SoftCom();
+        Dev.compName("MeriTrac");
+        let A24 = new SoftCom();
+        A24.compName("MeriTrac");
+
+      //--------------------------------------------
+
+        const cl = console.log.bind(console)
+        class SoftCom {
+          name() {
+            cl("Emp Name Access.");
+          }
+          id() {
+            cl("Emp Id Access.");
+          }
+          oldComp(comp) {
+            this.comp = comp;
+          }
+        }
+        let harry = new SoftCom();
+        harry.oldComp('TCS')
+        let A24 = new SoftCom();
+        A24.oldComp('MicroSoft')
+      </script>  -->
+
+    <!-- <script>
+      const cl = console.log.bind(console); 
+      class Mahindra {
+        startProcss() {
+          cl("Work Start.");
+        }
+        stopProcess() {
+          cl("Work Stop.");
+        }
+        setBrand(brand) {
+          this.brand = brand;
+        }
+      }
+
+      let thar = new Mahindra(); 
+      thar.setBrand("4x4");
+      let scorpio = new Mahindra();
+      scorpio.setBrand("MAHINDRA");
+    </script> -->
+
+
+    <!-- <script>
+      // Constructor In Class
+      const cl = console.log.bind(console);
+      class ToyotoCar {
+        constructor(brand,milage){
+          cl('Object is created.');
+          this.brand = brand;
+          this.milage = milage;
+        }
+        start() {
+          cl('Process Start.');
+        }
+        stop() {
+          cl('Process Stop.');
+        }
+      }
+
+      let fortuner = new ToyotoCar('Fortuner', 10) ;
+      cl(fortuner);
+      let lexix = new ToyotoCar('Lexix', 12);
+      cl(lexix);
+    </script> -->
+
+
+    <script>
+      class Car {
+        constructor(make,model,year){
+          this.make = make;
+          this.model = model;
+          this.year = year;
+        }
+      }
+
+      let car1 = new Car ('Chevy', "Blazer", 2016);
+      let car2 = new Car ('Ford', "Taurus", 2018);
+
+      console.log(`Car 1 is ${car1.year} ${car1.make} ${car1.model}. `)
+      console.log(`Car 2 is ${car2.year} ${car2.make} ${car2.model}.`)
+    </script>
+
+
+
+  </body>
+</html>

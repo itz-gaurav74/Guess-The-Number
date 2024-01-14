@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice DOM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p class="para">This Is A Paragraph.</p>
+    
+
+
+
+    <!-- <script>
+        let btn = document.createElement('button');
+        btn.innerText = 'Click Me';
+
+    </script> -->
+
+    <!-- <script>
+        let btn = document.createElement('button');
+        btn.innerText = 'Click Me';
+        btn.style.backgroundColor = 'red';
+        btn.style.color = 'white';
+        
+        let accessBody = document.querySelector('body');
+        accessBody.prepend(btn);
+      </script> -->
+
+      <script>
+        let p = document.querySelector('p');
+        p.setAttribute('class', 'newClass')
+      </script>
+
+      <!-- <script>
+        let div = document.createElement('div');
+        div.className = 'data';
+        console.log(div.outerHTML);
+        div.classList.add('newData');
+        div.classList.add('styleData');
+        console.log(div.outerHTML)
+        div.classList.remove('newData');
+        console.log(div.outerHTML);
+      </script> -->
+
+</body>
+</html>

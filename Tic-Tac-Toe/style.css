@@ -1,0 +1,141 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  /* background-color: #406AB1; */
+  background-color: #00a9c1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+h2 {
+  text-align: center;
+}
+.container {
+  /* border: 2px solid black; */
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#game {
+  /* border: 2px solid black; */
+  height: 60vmin;
+  width: 60vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5vmin;
+}
+#box {
+  /* background-color: #A5BADF; */
+  height: 18vmin;
+  width: 18vmin;
+  border-radius: 1.5vmin;
+  border: none;
+  font-size: 5vmin;
+}
+button:disabled {
+  background-color: #263b35;
+  color: aliceblue;
+}
+
+.winner {
+  margin: 40vmin 0;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#msg {
+  font-size: 5vmin;
+  padding: 0 0 5vmin 0;
+}
+/* #reset-btn,
+#new-btn {
+  height: 2em;
+  width: 6em;
+  font-size: 2.5vmin;
+  border-radius: 7px;
+  border: none;
+  margin-top: 1vmin;
+} */
+.hide {
+  display: none;
+}
+i {
+  font-size: 5vmin;
+  position: absolute;
+  bottom: 50px;
+  animation: bounce 2.5s ease-in-out infinite;
+}
+@keyframes bounce {
+  0% {
+    bottom: 10px;
+  }
+  50% {
+    bottom: 30px;
+  }
+  100% {
+    bottom: 10px;
+  }
+}
+.showdown {
+}
+.showdown h2 {
+  position: absolute;
+  bottom: 100px;
+  left: 45%;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 5em 0;
+}
+
+#showTurn {
+  padding: 17px;
+  font-size: 20px;
+}
+
+
+/* CSS */
+#reset-btn,
+#new-btn {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
+    5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#reset-btn:active,
+#new-btn:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+@media (min-width: 768px) {
+  #reset-btn,
+  #new-btn {
+    padding: 0.25em 0.75em;
+  }
+}

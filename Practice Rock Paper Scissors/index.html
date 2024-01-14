@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Pr Rock Paper Scissors</title>
+  </head>
+  <body>
+    <h2>Rock Paper Scissors</h2>
+    <div class="container">
+      <div class="option" id="rock">
+        <img src="Images/rock.png" alt="" />
+      </div>
+      <div class="option" id="paper">
+        <img src="Images/paper.png" alt="" />
+      </div>
+      <div class="option" id="scissors">
+        <img src="Images/scissors.png" alt="" />
+      </div>
+    </div>
+    <div class="winner-display">
+      <div class="user-data">
+        <span id="user">0</span>
+        <span id="user-Count">User Count</span>
+      </div>
+      <div class="comp-data">
+        <span id="comp">0</span>
+        <span id="comp-Count">Comp Count</span>
+      </div>
+    </div>
+    <div class="reset-btn">
+      <button id="reset">Reset Game</button>
+    </div>
+    <div class="winner-announce">
+      <h3 id="announce-the-win"></h3>
+    </div>
+
+    <script>
+      let options = document.querySelectorAll(".option");
+      let userScore = 0;
+      let compScore = 0;
+      let user = document.querySelector("#user");
+      let comp = document.querySelector("#comp");
+      let announce = document.querySelector("#announce-the-win");
+      let resetGame = document.querySelector("#reset");
+      const cl = console.log.bind(console);
+
+      options.forEach((option) => {
+        option.addEventListener("click", () => {
+          const userInp = option.getAttribute("id");
+          cl(`User Choice Is ${userInp}`);
+          logic(userInp);
+        });
+      });
+
+      const compInp = () => {
+        const data = ["rock", "paper", "scissors"];
+        const compRandomData = Math.floor(Math.random() * 3);
+        return data[compRandomData];
+      };
+      let logic = (userInp) => {
+        let computer = compInp();
+        cl(`Computer Input Is ${computer}`);
+
+        if (userInp == computer) {
+          cl("Match Tie");
+          announce.innerText = "The Match Is Tie";
+        } else if (
+          (userInp === "rock" && computer === "scissors") ||
+          (userInp === "paper" && computer === "rock") ||
+          (userInp === "scissors" && computer === "paper")
+        ) {
+          cl("User win");
+          userScore++;
+          user.innerText = userScore;
+          announce.innerText = "Yah! You Win";
+        } else {
+          cl("Computer win");
+          compScore++;
+          comp.innerText = compScore;
+          announce.innerText = "Opps! Computer Win";
+        }
+        cl("----------------------");
+      };
+
+      resetGame.addEventListener("click", () => {
+        resetData();
+      });
+
+      let resetData = () => {
+        userScore = 0;
+        compScore = 0;
+        user.innerText = userScore;
+        comp.innerText = compScore;
+        announce.innerText = "";
+        cl("btn clicked");
+      };
+    </script>
+  </body>
+</html>

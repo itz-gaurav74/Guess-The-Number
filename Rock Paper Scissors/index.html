@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <h2>Rock Paper Scissors</h2>
+    <div class="container">
+      <div class="img bg" id="rock">
+        <img src="Images/rock.png" alt="" />
+      </div>
+      <div class="img bg" id="paper">
+        <img src="Images/paper.png" alt="" />
+      </div>
+      <div class="img bg" id="scissors">
+        <img src="Images/scissors.png" alt="" />
+      </div>
+    </div>
+    <div class="winnerData">
+      <div class="user-Data">
+        <span class="user">0</span>
+        <span>User</span>
+      </div>
+      <div class="comp-Data">
+        <span class="comp">0</span>
+        <span>Comp</span>
+      </div>
+    </div>
+    <div class="winner-align">
+      <h3 class="show-winner"></h3>
+    </div>
+
+    <script>
+      let cl = console.log.bind(console);
+      let userScr = 0;
+      let compScr = 0;
+      let rpsImg = document.querySelectorAll(".img");
+      let user = document.querySelector(".user");
+      let comp = document.querySelector(".comp");
+      let showWin = document.querySelector(".show-winner");
+
+      rpsImg.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          let userInp = btn.getAttribute("id");
+          playGame(userInp);
+        });
+      });
+
+      let playGame = (userInp) => {
+        cl("User Choice : " + userInp);
+        let computer = compInp();
+        cl("Computer Choice : " + computer);
+
+        if (userInp == computer) {
+          cl("Match Tie");
+          showWin.innerText = "Shutt! Match Is Tie";
+          backChange();
+        } else if (
+          (userInp == "paper" && computer == "rock") ||
+          (userInp == "scissors" && computer == "paper") ||
+          (userInp == "rock" && computer == "scissors")
+        ) {
+          cl("Yah! User Win.");
+          userScr++;
+          user.innerText = userScr;
+          showWin.innerText = "Yah! You Win.";
+          backChange();
+        } else if (
+          (computer == "scissors" && userInp == "paper") ||
+          (computer == "paper" && userInp == "rock") ||
+          (computer == "rock" && userInp == "scissors")
+        ) {
+          cl("Opps! Computer Win. Play Again...");
+          compScr++;
+          comp.innerText = compScr;
+          showWin.innerText = "Opps! Pls Play Again";
+          backChange();
+        }
+      };
+
+      let compInp = () => {
+        let opt = ["rock", "paper", "scissors"];
+        let trick = Math.floor(Math.random() * 3);
+        return opt[trick];
+      };
+
+      let backChange = () => {
+        showWin.style.background = "black";
+        showWin.style.color = "white";
+      };
+    </script>
+  </body>
+</html>

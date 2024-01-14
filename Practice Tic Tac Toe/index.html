@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"  />
+    <title>Pr-Tic Tac Toe</title>
+  </head>
+  <body> 
+    
+    <div class="winner-data">
+      <h2 class="show-winner"></h2>
+      <button id="new-game">New Match</button>
+    </div>
+    <main>
+      <h2>Tic-Tac-Toe Game</h2>
+      <div class="board">
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+      </div>
+      <button id="reset-btn">Reset Game</button>
+    </main>
+
+    <script>
+      let boxes = document.querySelectorAll(".box");
+      let reset = document.querySelector("#reset-btn");
+      let new_match = document.querySelector("#new-game");
+      let show_winner = document.querySelector(".show-winner");
+      let show_win = document.querySelector(".winner-data");
+
+      let turnO = true;
+      const winPattern = [
+        [0, 1, 2],
+        [0, 3, 6],
+        [0, 4, 8],
+        [1, 4, 7],
+        [2, 5, 8],
+        [2, 4, 6],
+        [3, 4, 5],
+        [6, 7, 8],
+      ];
+      boxes.forEach((box) => {
+        box.addEventListener("click", () => {
+          let turn = turnO
+            ? ((box.innerText = "O"), (turnO = false))
+            : ((box.innerText = "X"), (turnO = true));
+          box.disabled = true;
+          winners();
+        });
+      });
+
+      let winners = () => {
+        for (const winner of winPattern) {
+          let position1 = boxes[winner[0]].innerText;
+          let position2 = boxes[winner[1]].innerText;
+          let position3 = boxes[winner[2]].innerText;
+
+          let condition =
+            position1 != "" && position2 != "" && position3 != ""
+              ? position1 === position2 && position2 === position3
+                ? (console.log("Winner"),
+                  disableBox(),(show_win.classList.add('show-win')),
+                  (show_winner.innerText = `He'y The Winner Is  ${position1}`),(new_match.style.margin = '4vmin 0'))
+                : console.log("Try Again")
+              : console.log("Try Again");
+        }
+      };
+
+      const disableBox = () => {
+        for (const box of boxes) {
+          box.disabled = true;
+        }
+      };
+      const enableBox = () => {
+        for (const box of boxes) {
+          box.disabled = false;
+          box.innerText = "";
+          show_winner.innerText = "";
+          show_win.classList.remove('show-win');
+          new_match.style.margin = '0'
+        }
+      };
+      let clearBox = () => {
+        turnO = true;
+        enableBox();
+      };
+
+      reset.addEventListener("click", clearBox);
+      new_match.addEventListener("click", clearBox);
+    </script>
+  </body>
+</html>

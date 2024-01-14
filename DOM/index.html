@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- <h2 id="newId">Access using id tag.</h2>
+    <h2 id="newId">Access using id tag.</h2>
+    <h2 id="newId">Access using id tag.</h2>
+    <p>hello</p>
+    <p>hello2</p>
+    <p>hello3</p> -->
+
+    <!-- <h2>Hello JavaScript</h2> -->
+
+    <!-- <div class="box">First</div>
+    <div class="box">Second</div>
+    <div class="box">Third</div> -->
+
+    <!-- <h4 class="hello_Class">Hello</h4> -->
+
+    <h2 class="text">Change Style Using Js.</h2>
+
+    <!-- <script>
+      // let para = document.querySelectorAll('#newId');
+      //     console.log(para);
+      let data = document.querySelector('h2');
+      console.log(data.innerText);
+      let newData = data.innerText = data.innerText + ' ' + 'From Sky Dev';
+      console.log(newData)
+
+    </script> -->
+    <!-- <script>
+        let div = document.querySelectorAll('.box');
+        console.log(div);
+        div[0].innerText = 'New Unique Value 1';
+        div[1].innerText = 'New Unique Value 2';
+        div[2].innerText = 'New Unique Value 3';
+        
+    </script> -->
+
+    <!-- <script>
+        // let div = document.querySelector('h4');
+        // console.log(div.getAttribute('class'));
+
+        let div = document.querySelector('h4');
+        div.setAttribute('class','updated_Class');
+        console.log(div);
+    </script> -->
+
+    <!-- <script>
+      let data = document.querySelector('h2');
+      data.style.backgroundColor = 'skyblue';
+    </script> -->
+
+    <!-- 
+    <script>
+      let btn = document.createElement('button');
+      btn.innerText = 'New Button';
+
+      let data = document.querySelector('h2');
+      data.append(btn); 
+      data.prepend(btn); 
+      data.before(btn); 
+      data.after(btn); 
+
+    </script> -->
+
+    <script>
+      let newHeading = document.createElement("h1");
+      newHeading.innerHTML = "<i>This is a new heading</i>";
+      console.log(newHeading);
+
+      let newBody = document.querySelector("body");
+      newBody.after(newHeading);
+
+      let heading = document.querySelector('h2');
+      heading.remove();
+    </script>
+  </body>
+</html>

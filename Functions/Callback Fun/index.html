@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Function</title>
+</head>
+<body>
+    <h2>Callback Function</h2>
+
+
+    <!-- <script>
+        const cl = console.log.bind(console);
+
+        function calc(Callback){
+            cl('first')
+            cl(`Hey The Calculation Is ${Callback}`)
+            cl('Last')
+            Callback()
+        }
+
+        function add(a, b){
+            return a + b;
+        }
+
+        cl(calc(add(2,5)));
+    </script> -->
+
+
+    <script>
+        // Normal fun
+        function greet(name, Callback){
+            console.log(`Hello ${name}`)
+            Callback()
+        }
+
+        // Callback Fun
+        function callMe(){
+            console.log('I am a callback function');
+        }
+
+        // Passing fun as argument
+        greet('Gaurav', callMe);
+    </script>
+</body>
+</html>
